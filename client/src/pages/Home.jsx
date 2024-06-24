@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import useAuth from '../hooks/useAuth'
 import useUser from '../hooks/useUser';
-import Balance from './auth/Ballance';
+import Balance from './auth/Balance';
 
 export default function Home() {
     const { user } = useAuth();
