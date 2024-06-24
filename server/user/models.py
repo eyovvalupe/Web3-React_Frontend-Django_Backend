@@ -32,6 +32,7 @@ class UserManager(BaseUserManager):
 
         user.first_name = kwargs.get('first_name')
         user.last_name = kwargs.get('last_name')
+        user.wallet_address = kwargs.get('wallet_address')
         user.is_admin = True
         user.is_staff = True
         user.is_superuser = True
@@ -43,6 +44,7 @@ class User(AbstractBaseUser):
     email = models.EmailField(null=False, blank=False, unique=True)
     first_name = models.CharField(max_length=50, blank=False, null=False, default='Default first name')
     last_name = models.CharField(max_length=50, blank=False, null=False, default='Default last name')
+    wallet_address = models.CharField(max_length=100, blank=True, null=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
